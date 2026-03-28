@@ -56,3 +56,6 @@ function removeItem(event) {
 }
 
 // Event listener calls------------------------------------------------------------------
+addProductButton.addEventListener("click", addProduct);
+
+cart.addEventListener("click", removeItem);
