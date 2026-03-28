@@ -27,14 +27,21 @@ const addProduct = () => {
     return;
   }
 
-  // Create cart item
+  // Create cart item after conditional
   const li = document.createElement("li");
-  li.dataset.price = price;
+ li.dataset.price = price.toFixed(2);
+
+  li.className = "flex justify-between items-center bg-base-100/80 backdrop-blur p-3 rounded-xl shadow-md border border-primary/20 hover:scale-[1.01] transition";
 
   li.innerHTML = `
-    ${name} - $${price.toFixed(2)}
-    <button class="remove-btn">Remove</button>
-  `;
+  <span class="font-medium">
+    ${name} - <span class="text-primary">$${price.toFixed(2)}</span>
+  </span>
+
+  <button class="btn btn-sm btn-accent remove-btn">
+    Remove
+  </button>
+`
 
   cart.appendChild(li);
 

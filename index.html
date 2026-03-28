@@ -5,19 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="./style.css">
     <script defer src="./script.js"></script>
 </head>
 
-<body>
-    <h1>Dynamic Shopping Cart</h1>
-    <div id="product-container">
-        <input type="text" id="product-name" placeholder="Product Name">
-        <input type="number" id="product-price" placeholder="Product Price">
-        <button id="add-product">Add Product</button>
+<body class="bg-base-100 min-h-screen flex items-center justify-center">
+    <div class="card w-full max-w-xl bg-base-200 shadow-xl p-6 space-y-6">
+        <h1 class="text-3xl font-bold text-primary text-center">Dynamic Shopping Cart</h1>
+
+        <div id="product-container" class="flex gap-2">
+            <input type="text" id="product-name" placeholder="Product Name" class="input input-bordered w-full focus:outline-primary">
+            <input type="number" id="product-price" placeholder="Product Price" class="input input-bordered w-28 focus:outline-accent">
+            <button id="add-product" class="btn btn-primary hover:scale-105 transition">Add Product</button>
+        </div>
+
+        <ul id="cart" class="space-y-2"></ul>
+
+        <div class="text-right text-lg font-semibold">
+            <h3>Total: $<span id="total-price" class="text-accent">0</span></h3>
+        </div>
     </div>
-    <ul id="cart"></ul>
-    <h3>Total: $<span id="total-price">0</span></h3>
 </body>
 
 </html>
